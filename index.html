@@ -1,24 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
+    <link rel="stylesheet" href="http://bootswatch.com/lumen/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <input id="txtEmail" type="email" placeholder="Email">
-        <input id="txtPassword" type="password" placeholder="Password">
-        
-        <button id="btnLogin" class="btn btn-action">Log in</button>
-        <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
-        <button id="btnLogout" class="btn btn-action hide">Log out</button>
+    <h1>Autenticação</h1>
+
+    <div class="col-md-4">
+        <h3 class="text-center" id="displayName">Você não está autenticado</h3>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="emailInput">E-mail</label>
+                <input type="email" class="form-control" id="emailInput" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+                <label for="passwordInput">Senha</label>
+                <input type="password" class="form-control" id="passwordInput" placeholder="Senha">
+            </div>
+        </form>
+
+        <button class="btn btn-lg btn-block btn-primary" id="authEmailPassButton">Autenticar</button>
+        <button class="btn btn-lg btn-block btn-info" id="createUserButton">Criar Nova Conta</button>
+        <br>
+
+        <p class="text-center">
+            <small>-- ou --</small>
+        </p>
+
+        <p class="text-center">
+            <button class="btn btn-lg btn-default" id="authGitHubButton">
+                <i class="fa fa-github fa-2x"></i>
+            </button>
+            <button class="btn btn-lg btn-primary" id="authFacebookButton">
+                <i class="fa fa-facebook fa-2x"></i>
+            </button>
+            <button class="btn btn-lg btn-info" id="authTwitterButton">
+                <i class="fa fa-twitter fa-2x"></i>
+            </button>
+            <button class="btn btn-lg btn-danger" id="authGoogleButton">
+                <i class="fa fa-google fa-2x"></i>
+            </button>
+            <button class="btn btn-lg btn-warning" id="authAnonymouslyButton">
+                <i class="fa fa-user fa-2x"></i>
+            </button>
+        </p>
+
+        <br>
+
+        <p class="text-center">
+            <button class="btn btn-lg btn-block btn-default" id="logOutButton">Sair</button>
+        </p>
     </div>
 
+    <br>
+    <br>
+    <a class="button button-clear" href="index.html">Voltar para Home</a>
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
