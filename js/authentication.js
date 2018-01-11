@@ -14,6 +14,7 @@ var passwordInput = document.getElementById('passwordInput');
 
 // Displays
 var displayName = document.getElementById('displayName');
+var photoURL = document.getElementById('photoURL');
 
 // Criar novo usuário
 createUserButton.addEventListener('click', function () {
@@ -112,6 +113,7 @@ function signIn(provider) {
             console.log(result);
             var token = result.credential.accessToken;
             displayName.innerText = 'Bem vindo, ' + result.user.displayName;
+            photoURL.setAttribute("src", result.user.photoURL);
         }).catch(function (error) {
             console.log(error);
             alert('Falha na autenticação');
