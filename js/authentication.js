@@ -61,23 +61,6 @@ logOutButton.addEventListener('click', function () {
         });
 });
 
-// Autenticar Anônimo
-authAnonymouslyButton.addEventListener('click', function () {
-    firebase
-        .auth()
-        .signInAnonymously()
-        .then(function (result) {
-            console.log(result);
-            displayName.innerText = 'Bem vindo, desconhecido';
-            alert('Autenticado Anonimamente');
-        })
-        .catch(function (error) {
-            console.error(error.code);
-            console.error(error.message);
-            alert('Falha ao autenticar, verifique o erro no console.')
-        });
-});
-
 // Autenticar com GitHub
 authGitHubButton.addEventListener('click', function () {
     // Providers
@@ -114,6 +97,7 @@ function signIn(provider) {
             var token = result.credential.accessToken;
             displayName.innerText = 'Bem vindo, ' + result.user.displayName;
             photoURL.setAttribute("src", result.user.photoURL);
+            photoURL.style.display = 'block';
         }).catch(function (error) {
             console.log(error);
             alert('Falha na autenticação');
