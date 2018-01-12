@@ -48,18 +48,18 @@ authEmailPassButton.addEventListener('click', function () {
         });
 });
 
-// Logout
-logOutButton.addEventListener('click', function () {
-    firebase
-        .auth()
-        .signOut()
-        .then(function () {
-            displayName.innerText = 'Você não está autenticado';
-            alert('Você se deslogou');
-        }, function (error) {
-            console.error(error);
-        });
-});
+// // Logout
+// logOutButton.addEventListener('click', function () {
+//     firebase
+//         .auth()
+//         .signOut()
+//         .then(function () {
+//             displayName.innerText = 'Você não está autenticado';
+//             alert('Você se deslogou');
+//         }, function (error) {
+//             console.error(error);
+//         });
+// });
 
 // Autenticar com GitHub
 authGitHubButton.addEventListener('click', function () {
