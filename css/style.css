@@ -9,6 +9,7 @@ body {
     font: 14px "Lato", Arial, sans-serif;
     background-color: #073642;
     color: rgba(255, 255, 255, 0.733);
+    text-align: center;
 }
 
 h1 {
@@ -95,6 +96,9 @@ input {
     border-radius: 3px;
     cursor: pointer;
 }
+.btn-login:hover {
+    background-color: aliceblue;
+}
 
 .btn-new-account {
     padding: 8px;
@@ -105,6 +109,9 @@ input {
     cursor: pointer;
 }
 
+.btn-new-account:hover {
+    background-color: aliceblue;
+}
 
 /*
 *  Start class sign with (github, fb, twitter, google)
@@ -122,6 +129,10 @@ input {
     border: none;
     border-radius: 2px;
     cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.7;
 }
 
 .btn-github {

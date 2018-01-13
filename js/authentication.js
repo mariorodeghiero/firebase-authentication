@@ -6,7 +6,6 @@ var authGoogleButton = document.getElementById('authGoogleButton');
 var authGitHubButton = document.getElementById('authGitHubButton');
 var authAnonymouslyButton = document.getElementById('authAnonymouslyButton');
 var createUserButton = document.getElementById('createUserButton');
-var logOutButton = document.getElementById('logOutButton');
 
 // Inputs
 var emailInput = document.getElementById('emailInput');
@@ -48,18 +47,6 @@ authEmailPassButton.addEventListener('click', function () {
         });
 });
 
-// // Logout
-// logOutButton.addEventListener('click', function () {
-//     firebase
-//         .auth()
-//         .signOut()
-//         .then(function () {
-//             displayName.innerText = 'Você não está autenticado';
-//             alert('Você se deslogou');
-//         }, function (error) {
-//             console.error(error);
-//         });
-// });
 
 // Autenticar com GitHub
 authGitHubButton.addEventListener('click', function () {
@@ -98,7 +85,14 @@ function signIn(provider) {
             displayName.innerText = 'Bem vindo, ' + result.user.displayName;
             photoURL.setAttribute("src", result.user.photoURL);
             photoURL.style.display = 'block';
-        }).catch(function (error) {
+        })
+        .onAuthStateChanged(function (provider) {
+            if (provider) {
+                window.location.href = "/access.html";
+                // window.location = '/1home.php';
+            }
+        })
+        .catch(function (error) {
             console.log(error);
             alert('Falha na autenticação');
         });
