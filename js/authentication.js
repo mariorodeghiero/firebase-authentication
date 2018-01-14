@@ -38,8 +38,9 @@ authEmailPassButton.addEventListener('click', function () {
         .signInWithEmailAndPassword(emailInput.value, passwordInput.value)
         .then(function (result) {
             console.log(result);
-            displayName.innerText = 'Bem vindo, ' + emailInput.value;
-            alert('Autenticado ' + emailInput.value);
+            wrapper.style.display = 'none';
+            displayName.innerText = `Bem vindo, ${emailInput.value}`;
+            // alert('Autenticado ' + emailInput.value);
         })
         .catch(function (error) {
             console.error(error.code);
