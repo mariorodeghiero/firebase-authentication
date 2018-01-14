@@ -1,2 +1,2 @@
 
-![Example running](src/img/gif2.gif)
+![Example running](img/gif2.gif)
