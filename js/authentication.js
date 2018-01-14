@@ -14,6 +14,7 @@ var passwordInput = document.getElementById('passwordInput');
 // Displays
 var displayName = document.getElementById('displayName');
 var photoURL = document.getElementById('photoURL');
+var wrapper = document.getElementById('wrapper');
 
 // Criar novo usuário
 createUserButton.addEventListener('click', function () {
@@ -82,18 +83,15 @@ function signIn(provider) {
         .then(function (result) {
             console.log(result);
             var token = result.credential.accessToken;
-            displayName.innerText = 'Bem vindo, ' + result.user.displayName;
+            displayName.innerText = `Bem vindo, ${result.user.displayName}. 
+                                    Voce esta conectado atraves do email: ${result.user.email}
+                                    `;
             photoURL.setAttribute("src", result.user.photoURL);
             photoURL.style.display = 'block';
-        })
-        .onAuthStateChanged(function (provider) {
-            if (provider) {
-                window.location.href = "/access.html";
-                // window.location = '/1home.php';
-            }
+            wrapper.style.display = 'none';
         })
         .catch(function (error) {
             console.log(error);
             alert('Falha na autenticação');
-        });
+        })
 }
